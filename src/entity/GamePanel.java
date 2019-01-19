@@ -8,9 +8,10 @@ public class GamePanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	private JPanel panel = new JPanel(new GridBagLayout());
+	private GridBagLayout glt = new GridBagLayout();
 
 	public GamePanel() {
+		
 	}
 
 }

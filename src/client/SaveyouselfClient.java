@@ -1,7 +1,6 @@
 package client;
 
 
-import javax.swing.JPanel;
 
 import entity.GamePanel;
 import entity.StartPanel;
@@ -11,18 +10,18 @@ public class SaveyouselfClient extends FrameUtil {
 
 	private static final long serialVersionUID = 1L;
 
-	public boolean game = false;
+	private boolean game = false;
 
-	private JPanel Start = new StartPanel();
+	private StartPanel Start = new StartPanel();
 
-	private JPanel Game = new GamePanel();
+	private GamePanel Game = new GamePanel();
 
-	void showWindow() {
+	private void showWindow() {
 		Game.setVisible(game);
 		Start.setVisible(!game);
 	}
 
-	public SaveyouselfClient() {
+	private SaveyouselfClient() {
 		super();
 		basePanel.add(Game);
 		basePanel.add(Start);

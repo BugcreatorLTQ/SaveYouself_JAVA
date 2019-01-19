@@ -14,7 +14,7 @@ public class FrameUtil extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
-	public JPanel basePanel = new JPanel();
+	protected JPanel basePanel = new JPanel();
 
 	void loadPanel() {
 
