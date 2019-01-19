@@ -60,6 +60,7 @@ public class FrameUtil extends JFrame {
 			}
 		}
 	}
+	
 
 	/**
 	 * Ë«»º³å

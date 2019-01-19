@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 
 import client.SaveyouselfClient;
-import client.StartMenu;
 
 public class Constant {
 
@@ -14,5 +13,4 @@ public class Constant {
 	public static final Color COLOR = Color.WHITE;
 
 	public static SaveyouselfClient client = null;
-	public static StartMenu start = null;
 }

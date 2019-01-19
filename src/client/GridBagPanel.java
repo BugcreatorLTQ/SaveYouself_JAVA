@@ -49,7 +49,7 @@ public abstract class GridBagPanel extends JPanel {
 		gcs.weighty = 1;
 		gcs.fill = GridBagConstraints.BOTH;
 		gcs.insets = new Insets(0, 0, 0, 0);
-		this.add(comp);
 		glt.setConstraints(comp, gcs);
+		this.add(comp);
 	}
 }
