@@ -1,31 +1,30 @@
 package client;
 
-
-
-import entity.GamePanel;
-import entity.StartPanel;
+import constant.Constant;
 import util.FrameUtil;
 
 public class SaveyouselfClient extends FrameUtil {
 
 	private static final long serialVersionUID = 1L;
 
-	private boolean game = false;
+	public boolean game = false;
 
-	private StartPanel Start = new StartPanel();
+	public StartPanel Start;
 
-	private GamePanel Game = new GamePanel();
+	public GamePanel Game;
 
-	private void showWindow() {
-		Game.setVisible(game);
+	public void updataWindow() {
 		Start.setVisible(!game);
+		Game.setVisible(game);
 	}
 
-	private SaveyouselfClient() {
+	public SaveyouselfClient() {
 		super();
-		basePanel.add(Game);
+		Constant.client = this;
+		Start = new StartPanel();
+		Game = new GamePanel();
 		basePanel.add(Start);
-		showWindow();
+		basePanel.add(Game);
 	}
 
 	public static void main(String[] args) {
