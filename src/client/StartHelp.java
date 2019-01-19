@@ -65,7 +65,6 @@ public class StartHelp extends GridBagPanel {
 
 	@Override
 	void setComponentGcs() {
-//		setGcs(Text, 0, 0, 4, 5);
 		setGcs(jsPane, 0, 0, 4, 5);
 		setGcs(Back, 4, 0, 1, 5);
 	}

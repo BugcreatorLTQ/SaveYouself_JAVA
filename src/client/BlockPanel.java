@@ -1,5 +1,7 @@
 package client;
 
+import java.awt.Color;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -10,12 +12,17 @@ public class BlockPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private final JLabel lable;
-	
-	public BlockPanel() {
-		lable = new JLabel("");
+
+	public BlockPanel(String info, Color color) {
+		lable = new JLabel(info);
 		lable.setFont(Constant.FONT);
-		lable.setBackground(Constant.COLOR);
-		setBackground(Constant.COLOR);
+		lable.setBackground(color);
+		add(lable);
+		setBackground(color);
+	}
+
+	public BlockPanel() {
+		this("", Constant.COLOR);
 	}
 
 }
