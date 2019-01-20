@@ -7,10 +7,8 @@ import java.awt.Insets;
 
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public abstract class GridBagPanel extends JPanel {
-
-	private static final long serialVersionUID = 1L;
-
 	protected GridBagLayout glt = new GridBagLayout();
 
 	protected GridBagConstraints gcs = new GridBagConstraints();
@@ -52,4 +50,5 @@ public abstract class GridBagPanel extends JPanel {
 		glt.setConstraints(comp, gcs);
 		this.add(comp);
 	}
+
 }

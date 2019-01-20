@@ -23,7 +23,6 @@ public class StartPanel extends GridBagPanel {
 	// 加载中间容器组件布局
 	private void loadMid() {
 		menu = new StartMenu();
-		menu.setBackground(Constant.COLOR);
 	}
 
 	/**

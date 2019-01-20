@@ -7,9 +7,8 @@ import javax.swing.JPanel;
 
 import constant.Constant;
 
+@SuppressWarnings("serial")
 public class BlockPanel extends JPanel {
-
-	private static final long serialVersionUID = 1L;
 
 	private final JLabel lable;
 
@@ -24,5 +23,4 @@ public class BlockPanel extends JPanel {
 	public BlockPanel() {
 		this("", Constant.COLOR);
 	}
-
 }

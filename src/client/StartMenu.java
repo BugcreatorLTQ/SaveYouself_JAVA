@@ -1,88 +1,92 @@
 package client;
 
-import java.awt.Graphics;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import constant.Constant;
 
-public class StartMenu extends GridBagPanel {
+@SuppressWarnings("serial")
+public class StartMenu extends JPanel {
 
-	private static final long serialVersionUID = 1L;
-	private JButton start;
-	private JButton help;
-	private JButton exit;
-	private JLabel title;
-
-	// 设置组件
-	@Override
-	void setComponents() {
-		// title
-		title = new JLabel("Save Youself", JLabel.CENTER);
-		title.setFont(Constant.FONT);
-		// Start
-		start = new JButton("start");
-		start.setFont(Constant.FONT);
-		start.setBackground(Constant.COLOR);
-		// Help
-		help = new JButton("help");
-		help.setFont(Constant.FONT);
-		help.setBackground(Constant.COLOR);
-		// Exit
-		exit = new JButton("exit");
-		exit.setFont(Constant.FONT);
-		exit.setBackground(Constant.COLOR);
-	}
-
-	// 设置组件布局
-	@Override
-	void setComponentGcs() {
-		setGcs(new BlockPanel(), 0, 0, 1, 2);
-		setGcs(title, 0, 2, 1, 2);
-		setGcs(new BlockPanel(), 0, 4, 1, 3);
-		setGcs(start, 0, 7, 1, 2);
-		setGcs(help, 0, 9, 1, 2);
-		setGcs(exit, 0, 11, 1, 2);
-	}
-
-	// 加载开始菜单
+	/**
+	 * Create the panel.
+	 */
 	public StartMenu() {
-		super();
-		loadMouseClick();
-	}
+		setForeground(Color.WHITE);
+		setBackground(Color.WHITE);
+		GridBagLayout gridBagLayout = new GridBagLayout();
+		gridBagLayout.columnWidths = new int[] { 0, 0 };
+		gridBagLayout.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+		gridBagLayout.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
+		gridBagLayout.rowWeights = new double[] { 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, Double.MIN_VALUE };
+		setLayout(gridBagLayout);
 
-	@Override
-	public void paint(Graphics g) {
-		super.paint(g);
-	}
+		JLabel lblSaveYouself = new JLabel("Save Youself");
+		lblSaveYouself.setFont(new Font("Segoe UI Light", Font.BOLD, 30));
+		GridBagConstraints gbc_lblSaveYouself = new GridBagConstraints();
+		gbc_lblSaveYouself.gridheight = 3;
+		gbc_lblSaveYouself.insets = new Insets(0, 0, 0, 0);
+		gbc_lblSaveYouself.gridx = 0;
+		gbc_lblSaveYouself.gridy = 0;
+		add(lblSaveYouself, gbc_lblSaveYouself);
 
-	// 设置组件鼠标点击事件
-	private void loadMouseClick() {
-		// 点击start按钮
-		start.addMouseListener(new MouseAdapter() {
+		JButton btnStart = new JButton("Start");
+		btnStart.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Constant.client.game = true;
-				Constant.client.updataWindow();
+				Constant.client.updataWindow(true);
 			}
 		});
-		// 点击help按钮
-		help.addMouseListener(new MouseAdapter() {
+		btnStart.setFont(new Font("Book Antiqua", Font.BOLD, 20));
+		btnStart.setBackground(Color.WHITE);
+		GridBagConstraints gbc_btnStart = new GridBagConstraints();
+		gbc_btnStart.gridheight = 2;
+		gbc_btnStart.fill = GridBagConstraints.BOTH;
+		gbc_btnStart.gridx = 0;
+		gbc_btnStart.gridy = 3;
+		add(btnStart, gbc_btnStart);
+
+		JButton btnHelp = new JButton("Help");
+		btnHelp.setFont(new Font("Calibri", Font.BOLD, 20));
+		btnHelp.setBackground(Color.WHITE);
+		btnHelp.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Constant.client.Start.openHelp(true);
+				Constant.client.startPanel.openHelp(true);
 			}
 		});
-		// 点击exit按钮
-		exit.addMouseListener(new MouseAdapter() {
+		GridBagConstraints gbc_btnHelp = new GridBagConstraints();
+		gbc_btnHelp.gridheight = 2;
+		gbc_btnHelp.fill = GridBagConstraints.BOTH;
+		gbc_btnHelp.gridx = 0;
+		gbc_btnHelp.gridy = 5;
+		add(btnHelp, gbc_btnHelp);
+
+		JButton btnExit = new JButton("Exit");
+		btnExit.setFont(new Font("Book Antiqua", Font.BOLD, 20));
+		btnExit.setBackground(Color.WHITE);
+		btnExit.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.exit(0);
 			}
 		});
+		GridBagConstraints gbc_btnExit = new GridBagConstraints();
+		gbc_btnExit.gridheight = 2;
+		gbc_btnExit.fill = GridBagConstraints.BOTH;
+		gbc_btnExit.gridx = 0;
+		gbc_btnExit.gridy = 7;
+		add(btnExit, gbc_btnExit);
+
 	}
 
 }

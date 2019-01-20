@@ -3,7 +3,7 @@ package constant;
 import java.awt.Color;
 import java.awt.Font;
 
-import client.SaveyouselfClient;
+import client.Client;
 
 public class Constant {
 
@@ -12,5 +12,5 @@ public class Constant {
 	public static final Font FONT = new Font("MV Boli", Font.BOLD, 30);
 	public static final Color COLOR = Color.WHITE;
 
-	public static SaveyouselfClient client = null;
+	public static Client client = null;
 }
