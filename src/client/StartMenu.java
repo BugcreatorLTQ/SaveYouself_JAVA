@@ -43,7 +43,7 @@ public class StartMenu extends JPanel {
 		btnStart.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Constant.client.updataWindow(true);
+				Constant.client.openGame(true);
 			}
 		});
 		btnStart.setFont(new Font("Book Antiqua", Font.BOLD, 20));

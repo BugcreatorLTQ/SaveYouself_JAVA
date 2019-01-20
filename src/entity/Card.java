@@ -12,7 +12,7 @@ public abstract class Card {
 		this.img = img;
 		this.info = info;
 	}
-
+	
 	// »ñÈ¡Í¼Ïñ
 	public Image getImage() {
 		return this.img;
@@ -32,5 +32,6 @@ public abstract class Card {
 	public void setInfo(String info) {
 		this.info = info;
 	}
+	
 
 }
